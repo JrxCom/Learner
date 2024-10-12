@@ -1,0 +1,53 @@
+{
+    "id": {
+        "type": "integer",
+        "minimum": 1000000000000,
+        "maximum": 9999999999999
+    },
+    "wid": {
+        "type": "integer",
+        "enum": [
+            2225528370193
+        ]
+    },
+    "name": {
+        "type": "string",
+        "minLength": 5,
+        "maxLength": 5
+    },
+    "type": {
+        "type": "string",
+        "enum": [
+            "bigint",
+            "double",
+            "varchar",
+            "enum",
+            "set",
+            "datetime"
+        ]
+    },
+    "size": {
+        "type": "integer",
+        "enum": [
+            50,
+            255,
+            200
+        ]
+    },
+    "iscontact": {
+        "type": "integer",
+        "enum": [
+            0,
+            1
+        ]
+    },
+    "archive": {
+        "type": "string",
+        "minLength": 5,
+        "maxLength": 5
+    },
+    "creatime": {
+        "type": "string",
+        "format": "date-time"
+    }
+}

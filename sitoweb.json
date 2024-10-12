@@ -1,0 +1,52 @@
+{
+    "id": {
+        "type": "integer",
+        "minimum": 1000000000000,
+        "maximum": 9999999999999
+    },
+    "name": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 5
+    },
+    "logo": {
+        "type": "string",
+        "format": "uri"
+    },
+    "title": {
+        "type": "string",
+        "minLength": 20
+    },
+    "intro": {
+        "type": "string",
+        "minLength": 200
+    },
+    "url": {
+        "type": "string",
+        "format": "uri-reference"
+    },
+    "grl": {
+        "type": "string",
+        "format": "uri-reference"
+    },
+    "version": {
+        "type": "string"
+    },
+    "code": {
+        "type": "string"
+    },
+    "archive": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 5
+    },
+    "statement": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 200
+    },
+    "creatime": {
+        "type": "string",
+        "format": "date-time"
+    }
+}
