@@ -1,0 +1,22 @@
+/* 汉字字体 */
+@font-face {
+  font-family: "cFont";
+  src: url("@/font/Chinese.ttf");
+}
+
+/* 英文字体 */
+@font-face {
+  font-family: "eFontL";
+  src: url("@/font/English_Light.ttf");
+}
+
+@font-face {
+  font-family: "eFontM";
+  src: url("@/font/English_Medium.ttf");
+}
+
+@font-face {
+  font-family: "eFontB";
+  src: url("@/font/English_Bold.ttf");
+}
+

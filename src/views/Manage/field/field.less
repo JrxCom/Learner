@@ -1,0 +1,215 @@
+#field-view {
+  box-sizing: border-box;
+  height: 100vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+
+  .tree_view {
+    padding: 10px;
+    background-color: #FFF;
+    width: 15%;
+  }
+
+  .table_view{
+    width: 85%;
+  }
+
+  .controls_view {
+    position: absolute;
+    z-index: 999;
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .1);
+    border: 1px solid rgba(224, 222, 222, 1);
+
+    .button-view {
+      height: 36px;
+      box-sizing: border-box;
+      padding: 10px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      font-size: 12px;
+      font-family: 'eFontL';
+
+      &:hover {
+        cursor: pointer;
+        opacity: 0.8;
+      }
+    }
+
+    .add_button {
+      .button-view();
+      border: 1px solid rgba(217, 236, 255, 1);
+      color: rgba(26, 92, 255, 1);
+      background-color: rgba(236, 245, 255, 1);
+    }
+
+    .edit_button {
+      .button-view();
+      border: 1px solid rgba(225, 243, 216, 1);
+      color: rgba(103, 194, 58, 1);
+      background-color: rgba(240, 249, 235, 1);
+    }
+
+    .remove_button {
+      .button-view();
+      border: 1px solid rgba(253, 226, 226, 1);
+      color: rgba(245, 108, 108, 1);
+      background-color: rgba(254, 240, 240, 1);
+    }
+  }
+
+  .dialog_view {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    z-index: 999;
+    background-color: rgba(0, 0, 0, 0.2);
+
+    .card_view {
+      padding: 10px 20px;
+      width: 300px;
+      border-radius: 20px;
+      background-color: rgba(255, 255, 255, 1);
+      position: relative;
+      left: 50%;
+      top: 45%;
+      transform: translate3d(-50%, -50%, 0);
+
+      .close_view {
+        position: absolute;
+        right: 10px;
+        top: 4px;
+      }
+
+      .title_view {
+        color: rgba(44, 62, 80, 1);
+        font-family: "eFontB";
+        text-align: center;
+        font-size: 20px;
+      }
+
+      .form_view {
+        padding: 10px 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+        overflow-y: auto;
+
+        &::-webkit-scrollbar {
+          display: none;
+          /* Chrome Safari */
+        }
+        -ms-overflow-style: none;
+
+        span {
+          color: rgba(44, 62, 80, 1);
+          font-family: "eFontL";
+          font-size: 12px;
+        }
+
+        .input_view {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+        }
+
+        .upload_view {
+          div {
+            width: 100px;
+            height: 100px;
+            border: 1px solid rgba(220, 223, 230, 1);
+            border-radius: 6px;
+            line-height: 100px;
+            box-sizing: border-box;
+            position: relative;
+
+            i {
+              color: rgba(220, 223, 230, 1);
+              font-size: 30px;
+              position: absolute;
+              left: 50%;
+              top: 50%;
+              transform: translate(-50%, -50%);
+            }
+          }
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
+
+        .textarea_view {
+          width: 100%;
+        }
+      }
+
+      .word_view {
+        padding: 10px 20px;
+
+        p {
+          font-size: 16px;
+          font-family: "cFont";
+          color: rgba(44, 62, 80, 1);
+        }
+
+        span {
+          font-size: 12px;
+          font-family: "cFont";
+          color: rgba(128, 139, 150, 1);
+        }
+      }
+
+      .submit_view {
+        position: absolute;
+        left: 50%;
+        bottom: -20px;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 60px;
+
+        .button-view {
+          width: 30px;
+          height: 30px;
+          box-sizing: border-box;
+          padding: 8px;
+          border-radius: 12px;
+          position: relative;
+
+          img {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+          }
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
+
+        .controls_button {
+          .button-view();
+        }
+
+        .cancel_button {
+          .button-view();
+          background-color: rgba(128, 139, 150, 1);
+        }
+      }
+    }
+  }
+}
