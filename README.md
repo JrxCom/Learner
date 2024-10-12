@@ -1,18 +1,14 @@
-## Learner_WEB
-
+## 引入插件
 ```
-前端(Vue2 less element-ui)	版本号(1.0.0)
-```
-
-## Leraner_PORT
-
-```
-后端(node)	版本号(1.0.0)
+npm install
 ```
 
-## Learner_SQL
-
+### 启动项目
 ```
-数据库(mysql)	版本号(1.0.0)
+npm run node
 ```
 
+### 项目打包
+```
+npm run build
+```
