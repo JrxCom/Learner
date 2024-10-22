@@ -43,41 +43,6 @@ exports.getDataList = (req, res) => {
         res.send({ status: 500, message: err })
     })
 }
-/* 根据时间段搜索数据 */
-exports.getSearchData = (req, res) => {
-    /* 查询数据库名称 */
-    const get_database = new Promise((resolve, reject) => {
-        db.query(`SELECT * FROM learner.sitoweb WHERE id = ${req.query.sid}`, (err, results) => {
-            setTimeout(() => {
-                if (results.length) {
-                    resolve(results[0]['archive'])
-                } else {
-                    reject("未查询到数据库信息！");
-                }
-            }, 200)
-        })
-    });
-    /* 查询数据库表名称 */
-    const get_table = new Promise((resolve, reject) => {
-        db.query(`SELECT * FROM learner.tabella WHERE id = ${req.query.tid}`, (err, results) => {
-            setTimeout(() => {
-                if (results.length) {
-                    resolve(results[0]['archive'])
-                } else {
-                    reject("未查询到数据库信息！");
-                }
-            }, 400)
-        })
-    });
-
-    Promise.all([get_database, get_table]).then((promiseRes) => {
-        /* 获取时间段数据 */
-        db.query(`SELECT * FROM ${promiseRes[0]}.${promiseRes[1]} where creatime BETWEEN '${req.query.beginTime}' AND '${req.query.endTime}'`, (err, results) => {
-            if (results) res.send({ status: 200, obj: { records: results } })
-            if (err) res.send({ status: 500, message: "获取数据列表失败！" })
-        })
-    })
-}
 /* 获取关联数据信息 */
 exports.getRelateData = (req, res) => {
     /* 查询数据库名称 */

@@ -17,7 +17,7 @@ exports.upload = async (req, res) => {
     const uploadInit = multer({
         storage: multer.diskStorage({
             destination(req, res, cb) {
-                cb(null, '../../uploads')
+                cb(null, '../../../uploads/LearnerUpload')
             },
             filename(req, file, cb) {
                 cb(null, randomFileName() + path.extname(file.originalname))

@@ -13,7 +13,7 @@ const router = express.Router()
 /* 配置解析表单数据 */
 app.use(express.urlencoded({ extended: false }))
 /* 配置静态访问路径 */
-app.use('/uploads',express.static('../../uploads'))
+app.use('/uploads',express.static('../../../uploads/LearnerUpload'))
 /* 配置cookie模块 */
 app.use(cookieParser())
 /* 打包验证码所需要的字体 */

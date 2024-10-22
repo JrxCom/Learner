@@ -2,8 +2,6 @@
 exports.$_data_path = [
     /* 获取数据列表 */
     { path: '/get-data-list', method: 'get', handler: 'getDataList' },
-    /* 查询数据信息 */
-    { path: '/get-search-data', method: 'get', handler: 'getSearchData' },
     /* 获取关联数据 */
     { path: '/get-relate-data', method: 'get', handler: 'getRelateData' },
     /* 添加数据信息 */

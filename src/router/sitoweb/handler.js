@@ -134,26 +134,30 @@ exports.editSitowebInfo = (req, res) => {
         })
         Promise.all([get_database, controls_data]).then((promiseRes) => {
             if (promiseRes) {
-                /* 修改数据库信息 */
-                db.query(`SELECT TABLE_NAME FROM information_schema. TABLES WHERE table_schema = '${promiseRes[0]}'`, (err, results) => {
-                    if (results) {
-                        const table = results
-                        db.query(`CREATE DATABASE ${req.body['archive']};`)
-                        if (table.length > 0) {
-                            table.forEach(item => {
-                                db.query(`RENAME TABLE ${promiseRes[0]}.${item['TABLE_NAME']} TO ${req.body['archive']}.${item['TABLE_NAME']};`)
-                            });
+                if (promiseRes[0] === req.body['archive']) {
+                    res.send({ status: 200, message: "修改网站信息成功。" })
+                } else {
+                    /* 修改数据库信息 */
+                    db.query(`SELECT TABLE_NAME FROM information_schema. TABLES WHERE table_schema = '${promiseRes[0]}'`, (err, results) => {
+                        if (results) {
+                            const table = results
+                            db.query(`CREATE DATABASE ${req.body['archive']};`)
+                            if (table.length > 0) {
+                                table.forEach(item => {
+                                    db.query(`RENAME TABLE ${promiseRes[0]}.${item['TABLE_NAME']} TO ${req.body['archive']}.${item['TABLE_NAME']};`)
+                                });
+                            }
+                            setTimeout(() => {
+                                db.query(`DROP DATABASE ${promiseRes[0]};`, (err, results) => {
+                                    if (results) res.send({ status: 200, message: "修改网站信息成功。" })
+                                    if (err) res.send({ status: 500, message: "修改网站信息失败！" })
+                                })
+                            }, 200)
                         }
-                        setTimeout(() => {
-                            db.query(`DROP DATABASE ${promiseRes[0]};`, (err, results) => {
-                                if (results) res.send({ status: 200, message: "修改网站信息成功。" })
-                                if (err) res.send({ status: 500, message: "修改网站信息失败！" })
-                            })
-                        }, 200)
-                    }
-                    console.log(err);
-                    if (err) res.send({ status: 500, message: '修改网站信息失败！' })
-                })
+                        console.log(err);
+                        if (err) res.send({ status: 500, message: '修改网站信息失败！' })
+                    })
+                }
             }
         }).catch(err => {
             res.send({ status: 500, message: err })
