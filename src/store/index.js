@@ -6,11 +6,12 @@ Vue.use(Vuex)
 /* 配置vuex数据 */
 export default new Vuex.Store({
   state: {
-    github: 'https://github.com/JrxCom/Learner/tree/Learner_WEB',
+    github: 'https://github.com/JrxCom/Learner/tree/main',
     stack: {
       front_end: 'Vue.js',
-      back_end: 'less',
-      preprocessor: 'node.js'
+      preprocessor: 'Less',
+      ui:'Element-ui',
+      back_end: 'Node.js',
     },
   },
 })

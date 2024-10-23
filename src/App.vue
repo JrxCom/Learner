@@ -26,8 +26,6 @@ export default {
               }, 2000);
             }
           });
-        }else{
-          console.log(111);
         }
       }
     });

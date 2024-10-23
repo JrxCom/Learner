@@ -26,6 +26,7 @@
         :data="tableData"
         border
         empty-text="No Data Available"
+        height="85vh"
         :header-cell-style="{
           background: '#EBEEF5',
           color: '#2C3E50',
@@ -44,9 +45,20 @@
         <el-table-column type="selection" width="40" align="center">
         </el-table-column>
         <el-table-column prop="id" label="id" width="180"> </el-table-column>
-        <el-table-column prop="name" label="表名称" width="160" align="center" :show-overflow-tooltip="true">
+        <el-table-column
+          prop="name"
+          label="表名称"
+          width="160"
+          align="center"
+          :show-overflow-tooltip="true"
+        >
         </el-table-column>
-        <el-table-column prop="intro" label="表简介" align="center" :show-overflow-tooltip="true">
+        <el-table-column
+          prop="intro"
+          label="表简介"
+          align="center"
+          :show-overflow-tooltip="true"
+        >
         </el-table-column>
         <el-table-column
           prop="archive"
@@ -325,7 +337,7 @@ export default {
     /* 删除数据 */
     remove_data() {
       this.removeDialog.message = this.$message({
-        duration:0,
+        duration: 0,
         message: "删除中请勿其他操作！",
         type: "success",
       });

@@ -8,14 +8,6 @@ export const $_get_data_list = (sid, tid, page, size) => {
     })
 }
 
-/* 根据id搜索数据 */
-export const getDataSearch = (wid, tid, id) => {
-    return request({
-        url: '/getDataSearch/?wid=' + wid + '&tid=' + tid + '&id=' + id,
-        method: 'get',
-    })
-}
-
 /* 添加数据信息 */
 export const $_add_data_info = (sid, tid, param) => {
     return request({

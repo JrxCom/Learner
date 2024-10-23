@@ -1,9 +1,3 @@
-/* 汉字字体 */
-@font-face {
-  font-family: "cFont";
-  src: url("@/font/Chinese.ttf");
-}
-
 /* 英文字体 */
 @font-face {
   font-family: "eFontL";

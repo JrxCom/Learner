@@ -46,9 +46,14 @@
       <div class="footer_view">
         <el-tooltip
           effect="dark"
-          content="<前端:vue.js><预处理器:less><后端:node.js>"
           placement="top-start"
         >
+          <div slot="content" style="font-family: 'eFontL';">
+            <p>前端：{{$store.state.stack.front_end}}</p>
+            <p>预处理器：{{$store.state.stack.preprocessor}}</p>
+            <p>UI：{{$store.state.stack.ui}}</p>
+            <p>后端：{{$store.state.stack.back_end}}</p>
+          </div>
           <div class="code_tag">
             <img width="18" height="18" src="@/assets/index/code.png" />
           </div>
@@ -98,7 +103,7 @@
           <div class="title_view">提示</div>
           <div class="word_view">
             <p>是否退出登录？</p>
-            <span>说明：退出成功后页面跳转到登录页</span>
+            <span>说明：退出成功后页面跳转到登录页！</span>
           </div>
           <div class="submit_view">
             <div class="logout_button" @click="log_out()">

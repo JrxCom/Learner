@@ -44,6 +44,7 @@
       <el-table
         :data="tableData"
         border
+        height="95vh"
         empty-text="No Data Available"
         :header-cell-style="{
           background: '#EBEEF5',
@@ -370,6 +371,7 @@ export default {
       $_get_sitoweb_tree().then((res) => {
         if (res.data.status === 200) {
           this.treeData = res.data.obj;
+          
         } else {
           this.$message({
             message: res.data.message,

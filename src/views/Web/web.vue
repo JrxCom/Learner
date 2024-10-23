@@ -2,7 +2,7 @@
   <div id="web-view">
     <div class="nav_view">
       <el-menu
-        style="font-family: 'cFontL'"
+        style="font-family: 'eFontL'"
         :default-active="navActive"
         mode="horizontal"
         background-color="rgba(235,238,245, 1)"
