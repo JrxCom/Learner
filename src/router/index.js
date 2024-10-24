@@ -29,18 +29,18 @@ const routes = [
     {
       path: '/library',
       name: 'library',
-      component: () => import('../views/Manage/library/library.vue')
+      component: () => import('../views/Manage/Library/library.vue')
     },
 
     {
       path: '/table',
       name: 'table',
-      component: () => import('../views/Manage/table/table.vue')
+      component: () => import('../views/Manage/Table/table.vue')
     },
     {
       path: '/field',
       name: 'field',
-      component: () => import('../views/Manage/field/field.vue')
+      component: () => import('../views/Manage/Field/field.vue')
     }]
   }
 ]
