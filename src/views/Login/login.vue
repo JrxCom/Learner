@@ -1,12 +1,12 @@
 <template>
-  <div id="login-view">
+  <div id="loginView">
     <!-- logo与网站标题 -->
-    <div class="logo_view">
+    <div class="logo-view">
       <img src="@/assets/common/logo.png" width="30" height="30" />
       <h3>LeaRneR</h3>
     </div>
     <!-- 文字 -->
-    <div class="word_view">
+    <div class="word-view">
       <p>We will</p>
       <p>Continue</p>
       <p>To working hard<b>.</b></p>
@@ -15,7 +15,7 @@
       <span>{{ date }}d.</span>
     </div>
     <!-- 点修饰 -->
-    <div class="dot_view">
+    <div class="dot-view">
       <span>·</span>
       <span>·</span>
       <span>·</span>
@@ -28,7 +28,7 @@
     </div>
     <!-- 登录按钮 -->
     <div
-      class="login_btn"
+      class="login-view"
       @click="
         loginDialog = true;
         get_code();
@@ -38,29 +38,29 @@
       Log in
     </div>
     <!-- 星星 -->
-    <div class="star_view">
+    <div class="star-view">
       <el-rate v-model="showValue.rate"></el-rate>
     </div>
     <!-- linux -->
-    <div class="linux_view">
+    <div class="linux-view">
       <img src="@/assets/login/Linux.png" />
     </div>
     <!-- pc -->
-    <div class="windows_view">
+    <div class="windows-view">
       <img src="@/assets/login/Windows.png" />
     </div>
     <!-- react -->
-    <div class="react_view">
+    <div class="react-view">
       <img src="@/assets/login/React.png" />
       <p><span>React</span>用于构建 Web 和原生交互界面的库</p>
     </div>
     <!-- angular -->
-    <div class="angular_view">
+    <div class="angular-view">
       <img src="@/assets/login/Angular.png" />
       <p><span>Angular</span>构建未来的 Web 开发框架</p>
     </div>
     <!-- javascript -->
-    <div class="javascript_view">
+    <div class="javascript-view">
       <el-switch
         active-text="JavaScript"
         inactive-text="TypeScript"
@@ -69,7 +69,7 @@
       </el-switch>
     </div>
     <!-- java -->
-    <div class="java_view">
+    <div class="java-view">
       <el-checkbox> Java </el-checkbox>
       <el-checkbox> Node.js </el-checkbox>
       <el-checkbox> Python </el-checkbox>
@@ -78,7 +78,7 @@
       <el-checkbox> Ruby </el-checkbox>
     </div>
     <!-- browser -->
-    <div class="browser_view">
+    <div class="browser-view">
       <img src="@/assets/login/Chrome.png" />
       <img src="@/assets/login/Edge.png" />
       <img src="@/assets/login/Firefox.png" />
@@ -87,32 +87,32 @@
       <img src="@/assets/login/Quark.png" />
     </div>
     <!-- homelogo -->
-    <div class="homelogo_view">
+    <div class="homelogo-view">
       <img src="@/assets/login/home.png" />
     </div>
     <!-- vue -->
-    <div class="vue_view">
+    <div class="vue-view">
       <img src="@/assets/login/Vue.png" />
       <p><span>Vue</span>是一套用于构建用户界面的渐进式框架</p>
     </div>
     <!-- html -->
-    <div class="html_view">
+    <div class="html-view">
       <img src="@/assets/login/HTML.png" />
       <img src="@/assets/login/CSS.png" />
     </div>
     <!-- less -->
-    <div class="less_view">
+    <div class="less-view">
       <el-radio v-model="showValue.radio" label="Less">Less</el-radio>
       <el-radio v-model="showValue.radio" label="Sass">Sass</el-radio>
       <el-radio v-model="showValue.radio" label="Stylus">Stylus</el-radio>
       <el-radio v-model="showValue.radio" label="PostCSS">PostCSS</el-radio>
     </div>
     <!-- ios -->
-    <div class="ios_view">
+    <div class="ios-view">
       <img src="@/assets/login/IOS.png" />
     </div>
     <!-- ui -->
-    <div class="ui_view">
+    <div class="ui-view">
       <el-table
         :data="showValue.table"
         size="mini"
@@ -125,7 +125,7 @@
       </el-table>
     </div>
     <!-- compiler -->
-    <div class="compiler_view">
+    <div class="compiler-view">
       <el-input
         placeholder="HBuilderX"
         suffix-icon="el-icon-star-off"
@@ -152,21 +152,21 @@
       </el-input>
     </div>
     <!-- android -->
-    <div class="android_view">
+    <div class="android-view">
       <img src="@/assets/login/Android.png" />
     </div>
 
     <el-collapse-transition>
       <!-- 登录弹窗 -->
-      <div class="dialog_view" v-show="loginDialog">
-        <div class="card_view">
-          <div class="close_view" @click="loginDialog = false">
+      <div id="dialogView" v-show="loginDialog">
+        <div class="card-view">
+          <div class="close-view" @click="loginDialog = false">
             <el-link type="primary" :underline="false"
               ><i class="el-icon-close"></i
             ></el-link>
           </div>
-          <div class="title_view">Log In</div>
-          <div class="form_view">
+          <div class="title-view">Log In</div>
+          <div class="form-view">
             <el-input
               placeholder="User id"
               v-model="loginForm['userid']"
@@ -186,7 +186,7 @@
             >
             </el-input>
 
-            <div class="code">
+            <div class="code-view">
               <el-input
                 placeholder="Code"
                 v-model="loginForm['code']"
@@ -201,8 +201,8 @@
               Remember me
             </el-checkbox>
           </div>
-          <div class="submit_view">
-            <div class="login_button" @click="log_in()">
+          <div class="submit-view">
+            <div class="login-button" @click="log_in()">
               <img width="14" height="14" src="@/assets/login/login.png" />
             </div>
           </div>

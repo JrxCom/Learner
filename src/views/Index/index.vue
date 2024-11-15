@@ -1,10 +1,11 @@
 <template>
-  <div id="index-view">
+  <div id="indexView">
     <!-- 目录 -->
-    <el-menu class="menu_view" :default-active="menuActive">
-      <div class="header_view">
+    <el-menu class="menu-view" :default-active="menuActive">
+      <div class="header-view">
         <img width="30" height="30" src="@/assets/common/logo.png" />
         <h3>LeaRneR</h3>
+
       </div>
       <el-menu-item index="home" @click="go_menu('/home')">
         <i class="el-icon-s-home"></i>
@@ -43,7 +44,7 @@
           <span slot="title">Field</span>
         </el-menu-item>
       </el-submenu>
-      <div class="footer_view">
+      <div class="footer-view">
         <el-tooltip
           effect="dark"
           placement="top-start"
@@ -54,16 +55,16 @@
             <p>UI：{{$store.state.stack.ui}}</p>
             <p>后端：{{$store.state.stack.back_end}}</p>
           </div>
-          <div class="code_tag">
+          <div class="code-tag">
             <img width="18" height="18" src="@/assets/index/code.png" />
           </div>
         </el-tooltip>
 
-        <div class="github_tag" @click="go_github()">
+        <div class="github-tag" @click="go_github()">
           <img width="18" height="18" src="@/assets/index/github.png" />
         </div>
 
-        <div class="screen_tag" @click="screenCode = !screenCode">
+        <div class="screen-tag" @click="screenCode = !screenCode">
           <img
             v-if="!screenCode"
             width="18"
@@ -79,7 +80,7 @@
         </div>
 
         <div
-          class="logout_tag"
+          class="logout-tag"
           @click="(logoutDialog = true), $bus.$emit('close-tips')"
         >
           <img width="18" height="18" src="@/assets/index/logout.png" alt="" />
@@ -87,26 +88,26 @@
       </div>
     </el-menu>
     <!-- 窗口 -->
-    <div class="path_view">
+    <div class="path-view">
       <router-view :key="$route.fullPath"></router-view>
     </div>
 
     <el-collapse-transition>
       <!-- 退出登录弹窗 -->
-      <div class="logout_view" v-show="logoutDialog">
-        <div class="card_view">
-          <div class="close_view" @click="logoutDialog = false">
+      <div class="logout-view" v-show="logoutDialog">
+        <div class="card-view">
+          <div class="close-view" @click="logoutDialog = false">
             <el-link type="danger" :underline="false"
               ><i class="el-icon-close"></i
             ></el-link>
           </div>
-          <div class="title_view">提示</div>
-          <div class="word_view">
+          <div class="title-view">提示</div>
+          <div class="word-view">
             <p>是否退出登录？</p>
             <span>说明：退出成功后页面跳转到登录页！</span>
           </div>
-          <div class="submit_view">
-            <div class="logout_button" @click="log_out()">
+          <div class="submit-view">
+            <div class="logout-button" @click="log_out()">
               <img
                 width="14"
                 height="14"
@@ -114,7 +115,7 @@
                 alt=""
               />
             </div>
-            <div class="cancel_button" @click="logoutDialog = false">
+            <div class="cancel-button" @click="logoutDialog = false">
               <img
                 width="14"
                 height="14"

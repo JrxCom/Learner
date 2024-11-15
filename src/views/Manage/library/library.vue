@@ -1,12 +1,13 @@
   <template>
   <div
-    id="library-view"
+    id="libraryView"
     @contextmenu.prevent.stop="show_controls_menu"
     @click="controlsMenu.dialog = false"
   >
-    <div class="table_view">
+    <div class="table-view">
       <el-table
         :data="webData"
+
         border
         empty-text="No Data Available"
         :header-cell-style="{
@@ -139,7 +140,7 @@
 
     <transition name="el-zoom-in-top">
       <div
-        class="controls_view"
+        class="controls-view"
         v-show="controlsMenu.dialog"
         :style="controlsMenu.style"
       >
@@ -156,20 +157,20 @@
     </transition>
 
     <el-collapse-transition>
-      <div class="dialog_view" v-if="controlsDialog.code">
-        <div class="card_view">
-          <div class="close_view" @click="controlsDialog.code = false">
+      <div class="dialog-view" v-if="controlsDialog.code">
+        <div class="card-view">
+          <div class="close-view" @click="controlsDialog.code = false">
             <el-link :type="controlsDialog.type" :underline="false"
               ><i class="el-icon-close"></i
             ></el-link>
           </div>
-          <div class="title_view">{{ controlsDialog.title }}</div>
-          <div class="form_view">
-            <div class="input_view">
+          <div class="title-view">{{ controlsDialog.title }}</div>
+          <div class="form-view">
+            <div class="input-view">
               <span>网站名称</span>
               <el-input v-model="webForm['name']" size="small"> </el-input>
             </div>
-            <div class="upload_view">
+            <div class="upload-view">
               <span>网站logo</span>
               <div @click="$refs.uploadRef.click()">
                 <img
@@ -188,36 +189,36 @@
                 @change="upload_logo"
               />
             </div>
-            <div class="input_view">
+            <div class="input-view">
               <span>网站标签</span>
               <el-input v-model="webForm['title']" size="small"> </el-input>
             </div>
-            <div class="textarea_view">
+            <div class="textarea-view">
               <span>网站简介</span>
               <el-input type="textarea" :rows="2" v-model="webForm['intro']">
               </el-input>
             </div>
-            <div class="input_view">
+            <div class="input-view">
               <span>网站地址</span>
               <el-input v-model="webForm['url']" size="small"> </el-input>
             </div>
-            <div class="input_view">
+            <div class="input-view">
               <span>git地址</span>
               <el-input v-model="webForm['grl']" size="small"> </el-input>
             </div>
-            <div class="input_view">
+            <div class="input-view">
               <span>网站版本</span>
               <el-input v-model="webForm['version']" size="small"> </el-input>
             </div>
-            <div class="input_view">
+            <div class="input-view">
               <span>网站开发信息</span>
               <el-input v-model="webForm['code']" size="small"> </el-input>
             </div>
-            <div class="input_view">
+            <div class="input-view">
               <span>数据库信息</span>
               <el-input v-model="webForm['archive']" size="small"> </el-input>
             </div>
-            <div class="textarea_view">
+            <div class="textarea-view">
               <span>底部声明</span>
               <el-input
                 type="textarea"
@@ -227,42 +228,42 @@
               </el-input>
             </div>
           </div>
-          <div class="submit_view">
+          <div class="submit-view">
             <div
-              class="controls_button"
+              class="controls-button"
               :style="{ 'background-color': controlsDialog.color }"
               @click="controls_data()"
             >
               <img width="14" height="14" src="@/assets/common/confirm.png" />
             </div>
-            <div class="cancel_button" @click="controlsDialog.code = false">
+            <div class="cancel-button" @click="controlsDialog.code = false">
               <img width="14" height="14" src="@/assets/common/cancel.png" />
             </div>
           </div>
         </div>
       </div>
 
-      <div class="dialog_view" v-if="removeDialog.code">
-        <div class="card_view">
-          <div class="close_view" @click="removeDialog.code = false">
+      <div class="dialog-view" v-if="removeDialog.code">
+        <div class="card-view">
+          <div class="close-view" @click="removeDialog.code = false">
             <el-link type="danger" :underline="false"
               ><i class="el-icon-close"></i
             ></el-link>
           </div>
-          <div class="title_view">Remove Info</div>
-          <div class="word_view">
+          <div class="title-view">Remove Info</div>
+          <div class="word-view">
             <p>是否确认删除该数据？</p>
             <span>说明：该操作不可逆，请谨慎删除！</span>
           </div>
-          <div class="submit_view">
+          <div class="submit-view">
             <div
               style="background-color: rgba(255, 71, 87, 1)"
-              class="controls_button"
+              class="controls-button"
               @click="remove_data()"
             >
               <img width="14" height="14" src="@/assets/common/confirm.png" />
             </div>
-            <div class="cancel_button" @click="removeDialog.code = false">
+            <div class="cancel-button" @click="removeDialog.code = false">
               <img width="14" height="14" src="@/assets/common/cancel.png" />
             </div>
           </div>

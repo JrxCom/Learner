@@ -1,6 +1,7 @@
 <template>
-  <div id="web-view">
-    <div class="nav_view">
+  <div id="webView">
+
+    <div class="nav-view">
       <el-menu
         style="font-family: 'eFontL'"
         :default-active="navActive"
@@ -23,7 +24,7 @@
       @contextmenu.prevent.stop="show_controls_menu"
       @click="controlsMenu.dialog = false"
     >
-      <div class="table_view">
+      <div class="table-view">
         <el-table
           :data="dataList"
           border
@@ -126,7 +127,7 @@
         </el-table>
       </div>
 
-      <div class="page_view" v-show="dataList.length">
+      <div class="page-view" v-show="dataList.length">
         <el-pagination
           background
           @size-change="data_size_change"
@@ -141,34 +142,34 @@
       </div>
       <transition name="el-zoom-in-top">
         <div
-          class="controls_view"
+          class="controls-view"
           v-show="controlsMenu.dialog"
           :style="controlsMenu.style"
         >
-          <div class="add_button" @click="show_controls_dialog('add')">
+          <div class="add-button" @click="show_controls_dialog('add')">
             <i class="el-icon-plus"></i>添加信息
           </div>
-          <div class="edit_button" @click="show_controls_dialog('edit')">
+          <div class="edit-button" @click="show_controls_dialog('edit')">
             <i class="el-icon-edit"></i>修改信息
           </div>
-          <div class="remove_button" @click="show_remove_dialog('remove')">
+          <div class="remove-button" @click="show_remove_dialog('remove')">
             <i class="el-icon-close"></i>删除信息
           </div>
         </div>
       </transition>
 
       <el-collapse-transition>
-        <div class="dialog_view" v-if="controlsDialog.code">
-          <div class="card_view">
-            <div class="close_view" @click="controlsDialog.code = false">
+        <div class="dialog-view" v-if="controlsDialog.code">
+          <div class="card-view">
+            <div class="close-view" @click="controlsDialog.code = false">
               <el-link :type="controlsDialog.type" :underline="false"
                 ><i class="el-icon-close"></i
               ></el-link>
             </div>
-            <div class="title_view">{{ controlsDialog.title }}</div>
-            <div class="form_view">
+            <div class="title-view">{{ controlsDialog.title }}</div>
+            <div class="form-view">
               <div v-for="(item, index) in headerData" :key="item.id">
-                <div class="input_view" v-if="item.creatway === '文本'">
+                <div class="input-view" v-if="item.creatway === '文本'">
                   <span>{{ item.archive }}</span>
                   <el-date-picker
                     size="small"
@@ -188,7 +189,7 @@
                   </el-input>
                 </div>
 
-                <div class="image_view" v-else-if="item.creatway === '图片'">
+                <div class="image-view" v-else-if="item.creatway === '图片'">
                   <span>{{ item.archive }}</span>
                   <div @click="$refs.imageUploadRef[0].click()">
                     <img
@@ -208,7 +209,7 @@
                   />
                 </div>
 
-                <div class="audio_view" v-else-if="item.creatway === '音频'">
+                <div class="audio-view" v-else-if="item.creatway === '音频'">
                   <span>{{ item.archive }}</span>
                   <div @click="$refs.audioUploadRef[0].click()">
                     <audio
@@ -228,7 +229,7 @@
                   />
                 </div>
 
-                <div class="video_view" v-else-if="item.creatway === '视频'">
+                <div class="video-view" v-else-if="item.creatway === '视频'">
                   <span>{{ item.archive }}</span>
                   <div @click="$refs.videoUploadRef[0].click()">
                     <video
@@ -248,7 +249,7 @@
                   />
                 </div>
 
-                <div class="select_view" v-else-if="item.creatway === '下拉'">
+                <div class="select-view" v-else-if="item.creatway === '下拉'">
                   <span>{{ item.archive }}</span>
 
                   <el-select
@@ -286,9 +287,9 @@
                   </el-select>
                 </div>
 
-                <div class="radio_view" v-else-if="item.creatway === '单选'">
+                <div class="radio-view" v-else-if="item.creatway === '单选'">
                   <span>{{ item.archive }}</span>
-                  <div class="content_view">
+                  <div class="content-view">
                     <el-radio-group v-model="dataForm[item.archive]">
                       <el-radio
                         v-for="(item_, index_) in dataOption[item.archive]"
@@ -300,9 +301,9 @@
                   </div>
                 </div>
 
-                <div class="checkbox_view" v-else-if="item.creatway === '多选'">
+                <div class="checkbox-view" v-else-if="item.creatway === '多选'">
                   <span>{{ item.archive }}</span>
-                  <div class="content_view">
+                  <div class="content-view">
                     <el-checkbox
                       v-model="checkValue[index]"
                       v-for="(item_, index_) in dataOption[item.archive]"
@@ -315,42 +316,42 @@
                 </div>
               </div>
             </div>
-            <div class="submit_view">
+            <div class="submit-view">
               <div
-                class="controls_button"
+                class="controls-button"
                 :style="{ 'background-color': controlsDialog.color }"
                 @click="controls_data()"
               >
                 <img width="14" height="14" src="@/assets/common/confirm.png" />
               </div>
-              <div class="cancel_button" @click="controlsDialog.code = false">
+              <div class="cancel-button" @click="controlsDialog.code = false">
                 <img width="14" height="14" src="@/assets/common/cancel.png" />
               </div>
             </div>
           </div>
         </div>
 
-        <div class="dialog_view" v-if="removeDialog.code">
-          <div class="card_view">
-            <div class="close_view" @click="removeDialog.code = false">
+        <div class="dialog-view" v-if="removeDialog.code">
+          <div class="card-view">
+            <div class="close-view" @click="removeDialog.code = false">
               <el-link type="danger" :underline="false"
                 ><i class="el-icon-close"></i
               ></el-link>
             </div>
-            <div class="title_view">Remove Info</div>
-            <div class="word_view">
+            <div class="title-view">Remove Info</div>
+            <div class="word-view">
               <p>是否确认删除该数据？</p>
               <span>说明：该操作不可逆，请谨慎删除！</span>
             </div>
-            <div class="submit_view">
+            <div class="submit-view">
               <div
                 style="background-color: rgba(255, 71, 87, 1)"
-                class="controls_button"
+                class="controls-button"
                 @click="remove_data()"
               >
                 <img width="14" height="14" src="@/assets/common/confirm.png" />
               </div>
-              <div class="cancel_button" @click="removeDialog.code = false">
+              <div class="cancel-button" @click="removeDialog.code = false">
                 <img width="14" height="14" src="@/assets/common/cancel.png" />
               </div>
             </div>

@@ -1,19 +1,19 @@
-#web-view {
+#webView {
   box-sizing: border-box;
 
 
-  .nav_view {
+  .nav-view {
     display: flex;
     justify-content: center;
     background-color: rgb(235, 238, 245);
   }
 
-  .page_view {
+  .page-view {
     position: absolute;
     bottom: 20px;
   }
 
-  .controls_view {
+  .controls-view {
     position: absolute;
     z-index: 999;
     width: 150px;
@@ -23,7 +23,7 @@
     box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .1);
     border: 1px solid rgba(224, 222, 222, 1);
 
-    .button-view {
+    .buttonView {
       height: 36px;
       box-sizing: border-box;
       padding: 10px;
@@ -41,29 +41,29 @@
       }
     }
 
-    .add_button {
-      .button-view();
+    .add-button {
+      .buttonView();
       border: 1px solid rgba(217, 236, 255, 1);
       color: rgba(26, 92, 255, 1);
       background-color: rgba(236, 245, 255, 1);
     }
 
-    .edit_button {
-      .button-view();
+    .edit-button {
+      .buttonView();
       border: 1px solid rgba(225, 243, 216, 1);
       color: rgba(103, 194, 58, 1);
       background-color: rgba(240, 249, 235, 1);
     }
 
-    .remove_button {
-      .button-view();
+    .remove-button {
+      .buttonView();
       border: 1px solid rgba(253, 226, 226, 1);
       color: rgba(245, 108, 108, 1);
       background-color: rgba(254, 240, 240, 1);
     }
   }
 
-  .dialog_view {
+  .dialog-view {
     position: absolute;
     left: 0;
     top: 0;
@@ -72,7 +72,7 @@
     z-index: 999;
     background-color: rgba(0, 0, 0, 0.2);
 
-    .card_view {
+    .card-view {
       padding: 10px 20px;
       width: 300px;
       border-radius: 20px;
@@ -82,20 +82,20 @@
       top: 45%;
       transform: translate3d(-50%, -50%, 0);
 
-      .close_view {
+      .close-view {
         position: absolute;
         right: 10px;
         top: 4px;
       }
 
-      .title_view {
+      .title-view {
         color: rgba(44, 62, 80, 1);
         font-family: "eFontB";
         text-align: center;
         font-size: 20px;
       }
 
-      .form_view {
+      .form-view {
         max-height: 60vh;
         padding: 10px 20px;
         display: flex;
@@ -117,13 +117,13 @@
           font-size: 12px;
         }
 
-        .input_view {
+        .input-view {
           width: 100%;
           display: flex;
           flex-direction: column;
         }
 
-        .image_view {
+        .image-view {
           div {
             width: 100px;
             height: 100px;
@@ -148,7 +148,7 @@
           }
         }
 
-        .audio_view {
+        .audio-view {
           div {
             width: 200px;
             height: 54px;
@@ -172,7 +172,7 @@
           }
         }
 
-        .video_view {
+        .video-view {
           div {
             width: 200px;
             height: 110px;
@@ -197,18 +197,18 @@
           }
         }
 
-        .select_view {
+        .select-view {
           width: 100%;
           display: flex;
           flex-direction: column;
         }
 
-        .radio_view {
+        .radio-view {
           width: 100%;
           display: flex;
           flex-direction: column;
 
-          .content_view {
+          .content-view {
             display: flex;
             flex-wrap: wrap;
             flex-direction: row;
@@ -216,14 +216,14 @@
           }
         }
 
-        .checkbox_view{
+        .checkbox-view{
           width: 100%;
           display: flex;
           flex-direction: column;
         }
       }
 
-      .word_view {
+      .word-view {
         padding: 20px;
 
         p {
@@ -242,7 +242,7 @@
         }
       }
 
-      .submit_view {
+      .submit-view {
         position: absolute;
         left: 50%;
         bottom: -20px;
@@ -253,7 +253,7 @@
         justify-content: center;
         gap: 60px;
 
-        .button-view {
+        .buttonView {
           width: 30px;
           height: 30px;
           box-sizing: border-box;
@@ -273,12 +273,12 @@
           }
         }
 
-        .controls_button {
-          .button-view();
+        .controls-button {
+          .buttonView();
         }
 
-        .cancel_button {
-          .button-view();
+        .cancel-button {
+          .buttonView();
           background-color: rgba(128, 139, 150, 1);
         }
       }

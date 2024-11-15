@@ -1,21 +1,22 @@
 <template>
-  <div id="home-view">
-    <div class="card_list_view">
-      <div class="card_item_view" v-for="(item, index) in webData" :key="index">
-        <div class="name_view">
+  <div id="homeView">
+    <div class="card-list-view">
+      <div class="card-item-view" v-for="(item, index) in webData" :key="index">
+        <div class="name-view">
           <img :src="fileUrl + item.logo" alt="" />
           <p>{{ item.name }}</p>
         </div>
-        <div :title="item.intro" class="intro_view">
+        <div :title="item.intro" class="intro-view">
           {{ item.intro }}
         </div>
-        <div class="archive_view">
+        <div class="archive-view">
           {{ item.archive }}
         </div>
-        <div class="time_view">
+
+        <div class="time-view">
           {{ new Date(item.creatime).toLocaleString() }}
         </div>
-        <div class="link_view">{{ item.url }}</div>
+        <div class="link-view">{{ item.url }}</div>
       </div>
     </div>
 
